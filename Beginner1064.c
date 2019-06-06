@@ -17,6 +17,5 @@ int main(){
     printf("%d valores positivos\n", qtdeN);
     printf("%.1f\n", somaN/qtdeN);
 
-
     return 0;
 }
