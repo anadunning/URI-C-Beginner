@@ -6,14 +6,15 @@ int main(){
 		int horaI, horaF, tempoHoras;
 		int minI, minF, tempoMins;
 		int segI, segF, tempoSegs;
+		char dp1[2], dp2[2], dp3[2], dp4[2];
 
 		scanf("%*s %d", &diaI);
 
-        scanf("%d : %d : %d\n", &horaI, &minI, &segI);
+        scanf("%d %s %d %s %d", &horaI, dp1, &minI, dp2, &segI);
 
         scanf("%*s %d", &diaF);
 
-        scanf("%d : %d : %d\n", &horaF, &minF, &segF);
+        scanf("%d %s %d %s %d", &horaF, dp3, &minF, dp4, &segF);
 
         // Calculating time in days:
         tempoDias = diaF - diaI;
@@ -46,14 +47,14 @@ int main(){
 		}
 
         // Reset day:
-		// if (tempoDias < 0){
-        //     tempoDias = 0;
-		// }
+		if (tempoDias < 0){
+            tempoDias = 0;
+		}
 
-		printf("%d dia(s)\n" , tempoDias);
-		printf("%d hora(s)\n", tempoHoras);
-		printf("%d minuto(s)\n", tempoMins);
-		printf("%d segundo(s\n", tempoSegs);
+		printf("%d dia(s)\n", tempoDias);
+        printf("%d hora(s)\n", tempoHoras);
+        printf("%d minuto(s)\n", tempoMins);
+        printf("%d segundo(s\n", tempoSegs);
 
         return 0;
 }
