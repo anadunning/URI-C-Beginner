@@ -19,7 +19,6 @@ int main(){
             if (X < Y){
                 printf("Crescente\n");
             }
-
         }
 
     return 0;
