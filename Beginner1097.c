@@ -14,7 +14,6 @@ int main(){
 
     I += 2;
     J += 5;
-
     }
 
     return 0;
