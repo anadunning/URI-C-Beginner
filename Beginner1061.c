@@ -2,59 +2,33 @@
 
 int main(){
 
-        int diaI, diaF, tempoDias;
-		int horaI, horaF, tempoHoras;
-		int minI, minF, tempoMins;
-		int segI, segF, tempoSegs;
-		char dp1[2], dp2[2], dp3[2], dp4[2];
+    int diaI, horaI, minI, segI;
+    int diaF, horaF, minF, segF;
+    char dia1[4], dia2[4];
+    char dp1[2], dp2[2], dp3[2], dp4[2];
 
-		scanf("%*s %d", &diaI);
+    // Reading the input in the test format
+    scanf("%s %d", dia1, &diaI);
+    scanf("%d %s %d %s %d", &horaI, dp1, &minI, dp2, &segI);
+    scanf("%s %d", dia2, &diaF);
+    scanf("%d %s %d %s %d", &horaF, dp3, &minF, dp4, &segF);
 
-        scanf("%d %s %d %s %d", &horaI, dp1, &minI, dp2, &segI);
+    int tI, tF, tEvent;
 
-        scanf("%*s %d", &diaF);
+    // Converting all times to seconds
+    tI = segI + minI*60 + horaI*60*60 + diaI*60*60*24;
+    tF = segF + minF*60 + horaF*60*60 + diaF*60*60*24;
 
-        scanf("%d %s %d %s %d", &horaF, dp3, &minF, dp4, &segF);
+    tEvent = tF - tI;
 
-        // Calculating time in days:
-        tempoDias = diaF - diaI;
+    // Converting time back to day, hour, minute and second
+    printf("%d dia(s)\n", tEvent / (60*60*24));
+    tEvent = tEvent % (60*60*24);
+    printf("%d hora(s)\n", tEvent / (60*60));
+    tEvent = tEvent % (60*60);
+    printf("%d minuto(s)\n", tEvent / 60);
+    tEvent = tEvent % 60;
+    printf("%d segundo(s)\n", tEvent);
 
-         // Calculating time in hours:
-		if (horaF < horaI) {
-			tempoHoras = horaF + 24 - horaI;
-			tempoDias--;
-		}
-		else {
-			tempoHoras = horaF - horaI;
-		}
-
-		// Calculating time in minutes:
-		if (minF < minI) {
-			tempoMins = minF + 60 - minI;
-			tempoHoras--;
-		}
-		else {
-			tempoMins = minF - minI;
-		}
-
-        // Calculating time in seconds:
-		if (segF < segI) {
-			tempoSegs = segF + 60 - segI;
-			tempoMins--;
-		}
-		else {
-			tempoSegs = segF - segI;
-		}
-
-        // Reset day:
-		if (tempoDias < 0){
-            tempoDias = 0;
-		}
-
-		printf("%d dia(s)\n", tempoDias);
-        printf("%d hora(s)\n", tempoHoras);
-        printf("%d minuto(s)\n", tempoMins);
-        printf("%d segundo(s\n", tempoSegs);
-
-        return 0;
+    return 0;
 }
