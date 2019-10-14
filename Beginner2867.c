@@ -12,7 +12,6 @@ int main(){
 
         scanf("%d %d", &N, &M);
 
-        //num = (M * log(N));
         num = log10(N)*M + 1;
 
         printf("%.0lf\n", floor(num));
