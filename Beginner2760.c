@@ -5,15 +5,6 @@ int main(){
 
     char phrase1[101], phrase2[101], phrase3[101];
 
-
-       // scanf("%s", phrase1);
-       // scanf("%s", phrase2);
-       // scanf("%s", phrase3);
-
-      //  fgets(phrase1, 41, stdin);
-      //  fgets(phrase2, 41, stdin);
-      //  fgets(phrase3, 41, stdin);
-
     gets(phrase1);
     gets(phrase2);
     gets(phrase3);
